@@ -1,4 +1,28 @@
-execute pathogen#infect()
+" vim-plug configuration
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'altercation/vim-colors-solarized'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-surround'
+Plug 'davidhalter/jedi-vim'
+Plug 'roxma/vim-paste-easy'
+Plug 'plasticboy/vim-markdown'
+
+Plug 'metakirby5/codi.vim'
+Plug 'jpalardy/vim-slime'
+
+" Add plugins to &runtimepath
+call plug#end()
 
 set nocompatible
 syntax on
