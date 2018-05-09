@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 # Enable solarized color scheme for Gnome terminal
-eval `dircolors /home/nhat/.dir_colors/dircolors`
+# eval `dircolors /home/nhat/.dir_colors/dircolors`
 
 export GUROBI_HOME="/opt/gurobi605/linux64"
 export PATH="${PATH}:${GUROBI_HOME}/bin"
@@ -160,6 +160,3 @@ export LESS_TERMCAP_se=$(printf '\e[0m') # leave standout mode
 export LESS_TERMCAP_so=$(printf '\e[01;33m') # enter standout mode
 export LESS_TERMCAP_ue=$(printf '\e[0m') # leave underline mode
 export LESS_TERMCAP_us=$(printf '\e[04;38;5;200m') # enter underline mode
-
-# To export matplotlib plots from terminal run
-export DISPLAY=:0.0

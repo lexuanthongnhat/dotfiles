@@ -15,7 +15,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'davidhalter/jedi-vim'
-Plug 'roxma/vim-paste-easy'
+"Plug 'roxma/vim-paste-easy'
 Plug 'plasticboy/vim-markdown'
 
 Plug 'metakirby5/codi.vim'
