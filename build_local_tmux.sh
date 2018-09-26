@@ -1,7 +1,7 @@
 #!/bin/bash
 # Install Tmux without root
 # Tmux depends on libevent and ncurses, which will be installed first.
-# Tested on a server using Centos 6.10
+# Tested on a server using Centos 6.10, 7.5
 # Based on:
 #   + https://gist.github.com/joegross/655aa118119b5b02a6d76e052dd7fac7
 #   + https://gist.github.com/ryin/3106801
@@ -35,8 +35,10 @@ cd "$DIR_SRC"
 wget -N https://github.com/tmux/tmux/releases/download/$TMUX_VERSION/tmux-$TMUX_VERSION.tar.gz
 tar -xzf tmux-$TMUX_VERSION.tar.gz
 cd tmux-$TMUX_VERSION
-./configure --prefix="$DIR" CFLAGS="-I${DIR}/include" LDFLAGS="-L${DIR}/lib"
-CPPFLAGS="-I${DIR}/include" LDFLAGS="-static -L${DIR}/lib" make install
+C_LIBS="-I${DIR}/include -I${DIR}/include/ncurses"
+LD_LIBS="-L${DIR}/lib -L${DIR}/include -L${DIR}/include/ncurses"
+./configure --prefix="$DIR" CFLAGS="$C_LIBS" LDFLAGS="$LD_LIBS"
+CPPFLAGS="$C_LIBS" LDFLAGS='-static '"$LD_LIBS" make install
 
 # Finally, add to path. Better to have it permanently in .bashrc or .zshrc
 echo "PATH=${DIR}/bin:"'"$PATH"' >> ~/.bashrc && source ~/.bashrc
