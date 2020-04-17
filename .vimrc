@@ -154,3 +154,6 @@ autocmd FileType cpp setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType h setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+" may useful to disable for hg, vim commit message
+" autocmd FileType text setlocal formatoptions-=t textwidth=0 nowrap
+
