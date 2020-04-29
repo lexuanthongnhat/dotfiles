@@ -160,3 +160,9 @@ export LESS_TERMCAP_se=$(printf '\e[0m') # leave standout mode
 export LESS_TERMCAP_so=$(printf '\e[01;33m') # enter standout mode
 export LESS_TERMCAP_ue=$(printf '\e[0m') # leave underline mode
 export LESS_TERMCAP_us=$(printf '\e[04;38;5;200m') # enter underline mode
+
+# Enable Vi key bindings
+set -o vi
+
+# Enable double-star ** wildcard for searching recursive
+shopt -s globstar
